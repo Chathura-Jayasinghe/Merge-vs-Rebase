@@ -8,7 +8,7 @@ pygame.init()
 WIDTH, HEIGHT = 500, 600
 PLAYER_WIDTH, PLAYER_HEIGHT = 50, 50
 OBSTACLE_WIDTH, OBSTACLE_HEIGHT = 50, 50
-SPEED = 3
+SPEED = 10
 OBSTACLE_SPEED = 5
 
 # Colors
@@ -34,6 +34,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.KEYDOWN: 
+            if event.key == pygame.K_q:
+               running = False   
 
     # Get key presses
     keys = pygame.key.get_pressed()
